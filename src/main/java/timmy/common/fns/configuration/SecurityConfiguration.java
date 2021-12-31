@@ -26,7 +26,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .cors().disable()
                 .authorizeRequests(authorize -> authorize
                                                     .antMatchers("/css/**", "/index").permitAll()
-                                                    .antMatchers("/user/**").hasRole("USER"))
+//                                                    .antMatchers("/user/**").hasRole("USER")
+                )
                 .formLogin(formLogin -> formLogin.loginPage("/login"));
     }
 

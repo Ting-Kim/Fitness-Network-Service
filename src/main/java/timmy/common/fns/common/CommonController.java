@@ -1,15 +1,18 @@
 package timmy.common.fns.common;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import timmy.common.fns.member.MemberDto;
 
 @Controller
 public class CommonController {
 
-    @RequestMapping(method = RequestMethod.GET, path = "/login")
-    public String loginView() {
-        return "index1.html";
+    @GetMapping("/signup")
+    public String signUpView(Model model) {
+        model.addAttribute("memberDto", new MemberDto());
+
+        return "signup";
     }
 }
 
